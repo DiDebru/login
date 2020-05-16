@@ -1,11 +1,16 @@
 # To get started with security, check out the documentation:
 # https://symfony.com/doc/current/security.html
 security:
-
+    encoders:
+        # this internal class is used by Symfony to represent in-memory users
+        Symfony\Component\Security\Core\User: sha256
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
         in_memory:
-            memory: ~
+            memory:
+                users:
+                    john_admin: { password: 'l8PXGvMMLLFle18ju9PScIXOCElk8/2X/DxAV2whqsE=' }
+                    jane_admin: { password: 'l8PXGvMMLLFle18ju9PScIXOCElk8/2X/DxAV2whqsE=' }
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
@@ -15,10 +20,11 @@ security:
 
         main:
             anonymous: ~
-            # activate different ways to authenticate
-
-            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
-            #http_basic: ~
-
-            # https://symfony.com/doc/current/security/form_login_setup.html
-            #form_login: ~
+            logout:
+                path:   /logout
+                target: /
+            guard:
+                authenticators:
+                    - AppBundle\Form\LoginFormAuthenticator
+    access_control:
+        - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }

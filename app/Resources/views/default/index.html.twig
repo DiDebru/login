@@ -1,11 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    {% if user %}
+
     <div id="wrapper">
         <div id="container">
             <div id="welcome">
-                <h1><span>Welcome to</span> Symfony {{ constant('Symfony\\Component\\HttpKernel\\Kernel::VERSION') }}</h1>
-            </div>
+                <h1><span>You are logged in!</span></h1>
+                <h2>Welcome <strong>{{ user.name }}</strong> to: Symfony {{ constant('Symfony\\Component\\HttpKernel\\Kernel::VERSION') }}</h2>
+                <h3>Click <a href="/logout">logout</a></h3>
 
             <div id="status">
                 <p>
@@ -44,6 +47,10 @@
 
         </div>
     </div>
+    {% else %}
+        <div>You are not logged in please <a href="/login">log in</a>.</div>
+    {% endif %}
+
 {% endblock %}
 
 {% block stylesheets %}

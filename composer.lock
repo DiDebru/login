@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3f13388c548f836a9b793374183927d8",
+    "content-hash": "f251e6db60d68af73e1dffb325c98f9a",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -2871,16 +2871,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v3.4.39",
+            "version": "v3.4.40",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "29ccc948a87d72c991fff9dbb92bd64f728e7b75"
+                "reference": "ad6f8608e92b548e5695f9213a81d14c2ef274b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/29ccc948a87d72c991fff9dbb92bd64f728e7b75",
-                "reference": "29ccc948a87d72c991fff9dbb92bd64f728e7b75",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/ad6f8608e92b548e5695f9213a81d14c2ef274b5",
+                "reference": "ad6f8608e92b548e5695f9213a81d14c2ef274b5",
                 "shasum": ""
             },
             "require": {
@@ -3023,7 +3023,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2020-03-30T06:25:29+00:00"
+            "time": "2020-04-28T17:41:57+00:00"
         },
         {
             "name": "twig/twig",
